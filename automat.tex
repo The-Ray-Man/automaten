@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+\tikzset{vertex/.style = {shape=circle,draw,minimum size=1.5em}} 
+\tikzset{edge/.style = {->,> = latex'}}\node[vertex] (r) at (4,2) { $ r $};
+\node[vertex] (p) at (4,4) { $ p $};
+\node[vertex] (rs) at (8,0) { $ rs $};
+\node[vertex] (pr) at (8,2) { $ pr $};
+\node[vertex] (qr) at (8,4) { $ qr $};
+\node[vertex] (pqs) at (12,2) { $ pqs $};
+\node[vertex] (qrs) at (12,4) { $ qrs $};
+\node[vertex] (pqrs) at (16,4) { $ pqrs $};
+\draw[edge] (r) to[bend right] node[near start, left] {$b$} (p) ;
+\draw[edge] (r) to[] node[near start, above] {$a$} (rs) ;
+\draw[edge] (p) to[] node[near start, above] {$a$} (qr) ;
+\draw[edge] (p) to[bend right] node[near start, left] {$b$} (r) ;
+\draw[edge] (rs) to[loop above] node[near start, left] {$a$} (rs) ;
+\draw[edge] (rs) to[bend right] node[near start, left] {$b$} (pr) ;
+\draw[edge] (pr) to[] node[near start, above] {$a$} (qrs) ;
+\draw[edge] (pr) to[loop above] node[near start, left] {$b$} (pr) ;
+\draw[edge] (qr) to[] node[near start, above] {$b$} (pqs) ;
+\draw[edge] (qr) to[bend right] node[near start, left] {$a$} (rs) ;
+\draw[edge] (pqs) to[bend right] node[near start, left] {$a, b$} (qrs) ;
+\draw[edge] (qrs) to[bend right] node[near start, above] {$b$} (pqrs) ;
+\draw[edge] (qrs) to[] node[near start, above] {$a$} (rs) ;
+\draw[edge] (pqrs) to[bend right] node[near start, above] {$a$} (qrs) ;
+\draw[edge] (pqrs) to[loop above] node[near start, left] {$b$} (pqrs) ;
+\end{tikzpicture}
